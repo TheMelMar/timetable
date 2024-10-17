@@ -1,0 +1,15 @@
+
+services:
+  web:
+   build: .
+  mssql:
+    container_name: mssql-db
+    hostname: mssql-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      MYSQL_PASSWORD: 'passwort123'
+      MYSQL_RANDOM_ROOT_PASSWORD: 'true'
+      MYSQL_USER: 'user'
+      MYSQL_DATABASE: 'sbb'
+    ports: 
+      - "3306:3306"
